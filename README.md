@@ -18,13 +18,13 @@ action "Clean" {
 }
 
 action "Generate" {
-  needs = "Build"
+  needs = "Clean"
   uses = "heowc/action-hexo@master"
   args = "generate"
 }
 
 action "Deploy" {
-  needs = "Tag"
+  needs = "Generate"
   uses = "heowc/action-hexo@master"
   args = "deploy"
   env = {
