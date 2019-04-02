@@ -1,6 +1,6 @@
 FROM node:10
 
-LABEL version="2.0.0"
+LABEL version="1.0.1"
 LABEL repository="http://github.com/heowc/action-hexo"
 LABEL homepage="https://heowc.github.io"
 LABEL maintainer="heowc <heowc1992@gmail.com>"
@@ -13,8 +13,10 @@ LABEL com.github.actions.color="red"
 RUN apt-get update && \
     apt-get install -y git-core
 
-RUN npm install -g hexo
+RUN npm install -g hexo hexo-deployer-git
 
 COPY "entrypoint.sh" "/entrypoint.sh"
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["help"]
