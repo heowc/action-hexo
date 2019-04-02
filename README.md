@@ -1,6 +1,6 @@
-# GitHub Action for NPM
+# GitHub Action for Hexo
 
-This Action for hexo     enables arbitrary actions with the hexo command-line client
+This Action for hexo enables arbitrary actions with the hexo command-line client
 
 ## Usage
 
@@ -35,6 +35,8 @@ action "Deploy" {
 ```
 
 ### Environment variables
+
+If using `hexo-deployer-git` when `Deploy` action,
 
 * `NAME` - **Optional**. To specify a name when deploying. Defaults to ""
 
