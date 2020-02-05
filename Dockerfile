@@ -1,6 +1,6 @@
 FROM node:10
 
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 LABEL repository="http://github.com/heowc/action-hexo"
 LABEL homepage="https://heowc.github.io"
 LABEL maintainer="heowc <heowc1992@gmail.com>"
