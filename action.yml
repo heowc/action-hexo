@@ -1,0 +1,12 @@
+name: 'GitHub Action for Hexo'
+description: 'Wraps the hexo CLI to enable common hexo commands.'
+author: 'heowc'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    NAME: ''
+    EMAIL: ''
+branding:
+  color: 'red'
+  icon: 'package'
