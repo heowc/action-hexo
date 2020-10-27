@@ -15,19 +15,19 @@ workflow "Clean, Generate, and Deploy" {
 }
 
 action "Clean" {
-  uses = "heowc/action-hexo@master"
+  uses = "heowc/action-hexo@main"
   args = "clean"
 }
 
 action "Generate" {
   needs = "Clean"
-  uses = "heowc/action-hexo@master"
+  uses = "heowc/action-hexo@main"
   args = "generate"
 }
 
 action "Deploy" {
   needs = "Generate"
-  uses = "heowc/action-hexo@master"
+  uses = "heowc/action-hexo@main"
   args = "deploy"
   env = {
     NAME = "input name ..."
@@ -47,18 +47,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clean
-      uses: heowc/action-hexo@master
+      uses: heowc/action-hexo@main
       with:
         args: clean
     - name: Generate
-      uses: heowc/action-hexo@master
+      uses: heowc/action-hexo@main
       with:
         args: generate
     - name: Deploy
-      uses: heowc/action-hexo@master
+      uses: heowc/action-hexo@main
       env:
-        EMAIL: input email ...
-        NAME: input name ...
+        EMAIL: <your-input-email>
+        NAME: <your-input-name>
       with:
         args: deploy
 
