@@ -6,38 +6,7 @@ This Action for hexo enables arbitrary actions with the hexo command-line client
 
 An example workflow to clean, generate, and deploy an hexo to the default public registry follows:
 
-### 1. HCL syntax (not recommend, [it will be deprecated on September 30, 2019](https://help.github.com/en/articles/migrating-github-actions-from-hcl-syntax-to-yaml-syntax#about-the-new-yaml-syntax-for-github-actions))
-
-```hcl
-workflow "Clean, Generate, and Deploy" {
-  on = "push"
-  resolves = ["Deploy"]
-}
-
-action "Clean" {
-  uses = "heowc/action-hexo@main"
-  args = "clean"
-}
-
-action "Generate" {
-  needs = "Clean"
-  uses = "heowc/action-hexo@main"
-  args = "generate"
-}
-
-action "Deploy" {
-  needs = "Generate"
-  uses = "heowc/action-hexo@main"
-  args = "deploy"
-  env = {
-    NAME = "input name ..."
-    EMAIL = "input email ..."
-  }
-}
-```
-
-### 2. YAML syntax (recommed, [how to migration](https://help.github.com/en/articles/migrating-github-actions-from-hcl-syntax-to-yaml-syntax#converting-workflow-files-in-your-repository-to-yaml-syntax))
-
+### YAML syntax
 ```yaml
 on: push
 name: Deploy
